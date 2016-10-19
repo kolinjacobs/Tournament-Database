@@ -6,7 +6,7 @@ How to run:
 
   1. download and install vagrant and virtual box
   
-  2. cd to the vagrant
+  2. cd to /tournament-database/vagrant
   
   3. run vagrant up
   
