@@ -10,6 +10,10 @@ How to run:
   
   3. run vagrant up
   
+  4. run vagrant ssh
+  
+  5. run psql -f tournament.sql
+  
   4. run tournament_test.py
   
   5. enjoy
