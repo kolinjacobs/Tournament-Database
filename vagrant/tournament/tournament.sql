@@ -14,14 +14,14 @@ CREATE TABLE players
 (
 id SERIAL PRIMARY KEY,
 player_name varchar(255),
-matches int
+matches INT
 );
 
 CREATE TABLE matches
 (
 id SERIAL PRIMARY KEY,
-loser int,
-winner int
+loser INT REFERENCES players(id),
+winner INT REFERENCES players(id)
 );
 
 CREATE VIEW wincounter
@@ -34,5 +34,3 @@ AS
          LEFT JOIN matches
                 ON players.id = matches.winner
   GROUP BY players.id;
-
-

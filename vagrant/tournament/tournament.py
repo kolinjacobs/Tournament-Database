@@ -13,7 +13,7 @@ def deleteMatches():
     # deletes all rows from the matches table
     c.execute("DROP VIEW wincounter;")
     c.execute("UPDATE players SET matches = 0")
-    c.execute("delete from matches;")
+    c.execute("DELETE FROM matches;")
     # resets the tables in the view
     createview = """
 CREATE VIEW wincounter
@@ -38,7 +38,7 @@ def deletePlayers():
     DB = connect()
     c = DB.cursor()
     # deletes all rows from the players table
-    c.execute("DELETE FROM players")
+    c.execute("TRUNCATE players CASCADE")
     DB.commit()
     c.close()
 
@@ -168,5 +168,3 @@ def swissPairings():
         match = (int(players[x * 2][0]), players[x * 2][1], int(players[(x * 2) + 1][0]), players[(x * 2) + 1][1])
         matches.append(match)
     return matches
-
-
